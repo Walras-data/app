@@ -29,7 +29,10 @@ import random
 
 from dash.dependencies import Input, Output
 
-app = dash.Dash()
+app = dash.Dash(
+    __name__
+)
+
 server = app.server
 app.layout = html.Div([
     html.Div([
@@ -113,7 +116,7 @@ def update_graph(country_drop):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False, use_reloader = False)
+    app.run_server(debug=True)
 #app.run_server()  # Turn off reloader if inside Jupyter
 
 
